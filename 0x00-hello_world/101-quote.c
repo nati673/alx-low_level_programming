@@ -1,9 +1,13 @@
+#include <stdio.h>
 #include <unistd.h>
-/* This is the main function that prints a quote 
+/**
+* main A c program that prints a line to the standard error
+
+* Return 1 (Success)
 */
 int main(void)
 {
-  char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-write(2, message, 59);
+fput(and that piece of art is usefull\" - Dora Kor
+par, 2015-10-19\n", stdout);
 return (1);
 }
