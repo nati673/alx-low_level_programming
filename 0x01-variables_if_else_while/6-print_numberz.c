@@ -7,12 +7,12 @@ nclude <stdio.h>
  *     */
 int main(void)
 {
-		int n;
+int n;
 
-			for (n = 48; n < 58; n++)
-					{
-								putchar(n);
-									}
-				putchar('\n');
-					return (0);
+for (n = 48; n < 58; n++)
+{
+putchar(n);
+}
+putchar('\n');
+return (0);
 }
