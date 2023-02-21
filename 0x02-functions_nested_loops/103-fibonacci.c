@@ -1,25 +1,26 @@
 #include <stdio.h>
 
 /**
- *main - Computes the sum of the first 50 Fibonacci numbers
+ * main - Prints the sum of even Fibonacci numbers below 4,000,000
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    int c;
-    long int n1, n2, fn, sum;
+    int i;
+    long int f1 = 1, f2 = 2, fn, sum = 0;
 
-    n1 = 1;
-    n2 = 2;
-    sum = n1 + n2;
-    for (c = 0; c < 49; c++)
+    while (f1 <= 4000000)
     {
-        fn = n1 + n2;
-        sum += fn;
-        n1 = n2;
-        n2 = fn;
+        if (f1 % 2 == 0)
+            sum += f1;
+
+        fn = f1 + f2;
+        f1 = f2;
+        f2 = fn;
     }
+
     printf("%ld\n", sum);
+
     return (0);
 }
