@@ -13,7 +13,7 @@ int main(void)
     n1 = 1;
     n2 = 2;
     sum = n1 + n2;
-    for (c = 0; c < 48; c++)
+    for (c = 0; c < 49; c++)
     {
         fn = n1 + n2;
         sum += fn;
