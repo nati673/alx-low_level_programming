@@ -1,50 +1,44 @@
-#include "main.h"
 #include <stdio.h>
+#include "holberton.h"
 
-/**
- * print_buffer - prints buffer
- * @b: buffer
- * @size: size
- * Return: void
- */
+#define BUFFER_SIZE 10
 
 void print_buffer(char *b, int size)
 {
-	int o, j, i;
+    int i, j;
 
-	o = 0;
+    for (i = 0; i < size; i += BUFFER_SIZE) {
+        printf("%08x: ", i);
+        for (j = i; j < i + BUFFER_SIZE; j += 2) {
+            if (j < size) {
+                printf("%02x%02x", b[j], b[j + 1]);
+            } else {
+                printf("     ");
+            }
+            printf(" ");
+        }
+        for (j = i; j < i + BUFFER_SIZE; j++) {
+            if (j >= size) {
+                break;
+            }
+            if (b[j] >= 32 && b[j] <= 126) {
+                printf("%c", b[j]);
+            } else {
+                printf(".");
+            }
+        }
+        printf("\n");
+    }
+}
 
-	if (size <= 0)
-	{
-		printf("\n");
-		return;
-	}
-	while (o < size)
-	{
-		j = size - o < 10 ? size - o : 10;
-		printf("%08x: ", o);
-		for (i = 0; i < 10; i++)
-		{
-			if (i < j)
-				printf("%02x", *(b + o + i));
-			else
-				printf("  ");
-			if (i % 2)
-			{
-				printf(" ");
-			}
-		}
-		for (i = 0; i < j; i++)
-		{
-			int c = *(b + o + i);
+int main(void)
+{
+    char buffer[98] = "This is a string!\nAnd this is the rest of the #buffer :)\n";
+    char buffer2[98] = "This is a string!\nAnd this is the rest of the #buffer :)\n";
+    int size = sizeof(buffer);
 
-			if (c < 32 || c > 132)
-			{
-				c = '.';
-			}
-			printf("%c", c);
-		}
-		printf("\n");
-		o += 10;
-	}
+    print_buffer(buffer, size);
+    printf("---------------------------------\n");
+    printf("%s", buffer2);
+    return (0);
 }
