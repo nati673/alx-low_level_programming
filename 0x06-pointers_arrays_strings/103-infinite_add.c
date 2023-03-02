@@ -1,28 +1,6 @@
 #include "main.h"
 
 /**
- * _strlen - returns the length of a string
- * @s: the string whose length to check
- *
- * Return: integer length of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s++)
-		i++;
-	return (i);
-}
-
-/**
- * rev_string - reverses a string
- * @s: the string to reverse
- *
- * Return: void
-#include "main.h"
-
-/**
  * rev_string - reverse array
  * @n: integer params
  * Return: 0
