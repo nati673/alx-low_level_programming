@@ -1,35 +1,26 @@
-#include <stdio.h>
-
-/* Declare the print_number function */
-void print_number(int n);
-
-int main(void)
-{
-    /* Call the print_number function */
-    print_number(0);
-    /* Print a newline character */
-    putchar('\n');
-    return 0;
-}
+#include <unistd.h>
+#include "main.h"
 
 /**
- * print_number - print numbers chars
- * @n: integer params
- * Return: 0
+ * print_number - Entry point
+ * Description: Prints an integer
+ * @n: Integer
+ * Return: int
  */
+
+void _putchar(char c);
 void print_number(int n)
 {
-    unsigned int n1;
+	unsigned int x = n;
 
-    n1 = n;
-    if (n < 0)
-    {
-        putchar('-');
-        n1 = -n;
-    }
-    if (n1 / 10 != 0)
-    {
-        print_number(n1 / 10);
-    }
-    putchar((n1 % 10) + '0');
+	if (n < 0)
+	{
+	_putchar('-');
+		x = -x;
+	}
+
+	if ((x / 10) > 0)
+		print_number(x / 10);
+
+	_putchar((x % 10) + '0');
 }
