@@ -9,7 +9,7 @@
  * @size_r: buffer size:
  * Return: the pointer to dest.
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 {
 	int i, j, k, l, m, n;
 
@@ -44,5 +44,4 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[l] = m;
 	}
 	return (r);
-
 }
