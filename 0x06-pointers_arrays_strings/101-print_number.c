@@ -1,21 +1,23 @@
 #include <unistd.h>
 #include "main.h"
 
+void _putchar(char c);
+
 /**
- * print_number - Entry point
- * Description: Prints an integer
- * @n: Integer
- * Return: int
+ * print_number - Prints an integer
+ * @n: The integer to be printed
+ *
+ * Return: void
  */
 
-void _putchar(char c);
 void print_number(int n)
+
 {
 	unsigned int x = n;
 
 	if (n < 0)
 	{
-	_putchar('-');
+		_putchar('-');
 		x = -x;
 	}
 
@@ -24,3 +26,4 @@ void print_number(int n)
 
 	_putchar((x % 10) + '0');
 }
+
